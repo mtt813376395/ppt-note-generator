@@ -477,8 +477,8 @@
 
     async function getPdfLibrary() {
       if (!pdfLibraryPromise) {
-        pdfLibraryPromise = import(PDF_JS_BASE + 'build/pdf.mjs').then((library) => {
-          library.GlobalWorkerOptions.workerSrc = PDF_JS_BASE + 'build/pdf.worker.mjs';
+        pdfLibraryPromise = import(PDF_JS_BASE + 'legacy/build/pdf.mjs').then((library) => {
+          library.GlobalWorkerOptions.workerSrc = PDF_JS_BASE + 'legacy/build/pdf.worker.mjs';
           return library;
         }).catch((error) => {
           pdfLibraryPromise = null;
